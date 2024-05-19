@@ -1,10 +1,11 @@
 import './App.css'
+import PokeDex from './Components/Pokedex/Pokedex'
 
 function App() {
 
   return (
     <>
-      <h1 className='title text-center bg-[#cebd2f] px-4 py-2 rounded shadow hover:bg-green-400 focus:outline-none'>PokeDex</h1>
+        <PokeDex />
     </>
   )
 }
