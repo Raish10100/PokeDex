@@ -21,7 +21,6 @@ function PokemonList(){
 
         const pokeListResult =   pokemonData.map((pokeData) => {
         const pokemon = pokeData.data;
-
             return{
                 id: pokemon.id,
                 name: pokemon.name,
@@ -32,8 +31,7 @@ function PokemonList(){
         // console.log(pokeListResult);
         setPokemonList(pokeListResult);
         setIsLoading(false)
-
-        
+       
     }
 
 useEffect(() => {
@@ -41,12 +39,23 @@ useEffect(() => {
 }, []);
 
     return (
-        <>
-            {
+        <div className='w-[100%] mx-auto flex flex-col justify-center items-center'>
+        <h2 className='text-[35px] mb-[20px] tracking-[5px] text-center'>Pokemon List</h2>
+        <div className="btns ">
+            <button className='text-black bg-white px-[35px] py-[8px] ml-[15px] rounded-xl hover:bg-[#ffffffb9] '>Prev</button>
+            <button className='text-black bg-white px-[35px] py-[8px] ml-[15px] rounded-xl hover:bg-[#ffffffb9] '>Next</button>
+        </div>
+           <div className='Pokemon-list-wrapper flex flex-wrap justify-center items-center gap-[20px] px-[10px] mt-[35px]'>
+           {
                 (isLoading) ? 'Loading...' : 
-                pokemonList.map((p) => <Pokemon name={p.name} img={p.image} key={p.id}  />)
+                pokemonList.map((p) => <Pokemon  name={p.name} img={p.image} key={p.id}  />)
             }
-        </>
+           </div>
+           <div className="btns mt-[35px] ">
+                <button className='text-black bg-white px-[35px] py-[8px] ml-[15px] rounded-xl hover:bg-[#ffffffb9] '>Prev</button>
+                <button className='text-black bg-white px-[35px] py-[8px] ml-[15px] rounded-xl hover:bg-[#ffffffb9] '>Next</button>
+            </div>
+        </div>
     )
 }
 
