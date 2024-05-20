@@ -55,7 +55,7 @@ useEffect(() => {
            <div className='Pokemon-list-wrapper flex flex-wrap justify-center items-center gap-[20px] px-[10px] mt-[35px]'>
            {
                 (isLoading) ? 'Loading...' : 
-                pokemonList.map((p) => <Pokemon  name={p.name} img={p.image} key={p.id}  />)
+                pokemonList.map((p) => <Pokemon  name={p.name} img={p.image} key={p.id} id={p.id}  />)
             }
            </div>
            <div className="btns mt-[35px] ">
