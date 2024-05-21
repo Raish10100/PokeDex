@@ -2,12 +2,12 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
-function PokemonDetails(){
+function PokemonDetails({ pokemonName }){
     let {id} = useParams();
     let [pokemon, setPokemon] = useState({})
 
     async function downloadPokemon(){
-        const response = await axios.get(`https://pokeapi.co/api/v2/pokemon/${id}/`);
+        const response = await axios.get( id ?`https://pokeapi.co/api/v2/pokemon/${id}/` : `https://pokeapi.co/api/v2/pokemon/${pokemonName}/`);
         setPokemon(
             {
                 name: response.data.name,
